@@ -14,6 +14,7 @@ namespace Quinto
 {
     public partial class Lexique : Form
     {
+        Mots mots = new Mots();
         private Lexique()
         {
             InitializeComponent();
@@ -38,8 +39,9 @@ namespace Quinto
         {
             Mot mot = new Mot();
             mot.Texte = txtMotAAjouter.Text;
-            SaveJson(mot);
+            mots.Add(mot);
             txtMotAAjouter.Clear();
+            Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);
 
 
         }
@@ -49,13 +51,7 @@ namespace Quinto
 
         }
 
-        public void SaveJson(Mot mot)
-        {
-            string filepath = @"C:\Users\CDA\source\repos\Lexique.json";
-            JsonSerializer j = new JsonSerializer();
-            using(StreamWriter sw = new StreamWriter(filepath,true))
-            using(JsonWriter writer = new JsonTextWriter(sw)) { j.Serialize(writer, mot); }
-        }
+        
 
         private void Lexique_FormClosed(object sender, FormClosedEventArgs e)
         {

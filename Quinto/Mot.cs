@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quinto
 {
+    [Serializable]
     public class Mot
     {
         int longueur = 0;
@@ -26,6 +27,7 @@ namespace Quinto
         {
             return (texte != null) ? texte.GetHashCode() : 0;
         }
+
     }
 
 }

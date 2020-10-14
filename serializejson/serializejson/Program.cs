@@ -27,6 +27,7 @@ namespace serializejson
             Console.WriteLine(lexique.SaveJson(dossier));
             Console.WriteLine(lexique.LoadJson(dossier));
 
-        } 
-    }
+        }
+     
+    }    
 }

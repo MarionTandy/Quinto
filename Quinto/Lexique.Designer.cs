@@ -39,6 +39,7 @@
             this.txtMotAAjouter.Name = "txtMotAAjouter";
             this.txtMotAAjouter.Size = new System.Drawing.Size(100, 20);
             this.txtMotAAjouter.TabIndex = 0;
+            this.txtMotAAjouter.TextChanged += new System.EventHandler(this.txtMotAAjouter_TextChanged);
             // 
             // btnAjouter
             // 
@@ -48,6 +49,7 @@
             this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // lstLexique
             // 

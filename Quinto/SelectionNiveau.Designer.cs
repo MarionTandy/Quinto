@@ -42,6 +42,7 @@
             this.btnJouer.TabIndex = 3;
             this.btnJouer.Text = "Jouer !";
             this.btnJouer.UseVisualStyleBackColor = true;
+            this.btnJouer.Click += new System.EventHandler(this.btnJouer_Click);
             // 
             // rdbFacile
             // 
@@ -87,6 +88,7 @@
             this.Controls.Add(this.btnJouer);
             this.Name = "SelectionNiveau";
             this.Text = "Sélectionne ton niveau !";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SelectionNiveau_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

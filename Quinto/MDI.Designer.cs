@@ -108,6 +108,7 @@
             this.scoresToolStripMenuItem1.Name = "scoresToolStripMenuItem1";
             this.scoresToolStripMenuItem1.Size = new System.Drawing.Size(53, 20);
             this.scoresToolStripMenuItem1.Text = "Scores";
+            this.scoresToolStripMenuItem1.Click += new System.EventHandler(this.scoresToolStripMenuItem1_Click);
             // 
             // MDI
             // 

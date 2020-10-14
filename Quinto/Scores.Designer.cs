@@ -100,6 +100,7 @@
             this.Controls.Add(this.lblScoreFacile);
             this.Name = "Scores";
             this.Text = "Scores";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Scores_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

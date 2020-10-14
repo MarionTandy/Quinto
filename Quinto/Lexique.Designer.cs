@@ -67,6 +67,7 @@
             this.Controls.Add(this.txtMotAAjouter);
             this.Name = "Lexique";
             this.Text = "Ajoute des mots au lexique";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Lexique_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

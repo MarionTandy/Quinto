@@ -48,24 +48,34 @@ namespace Quinto
             Button button = sender as Button;
             lstLettres.Items.Add(button.Text);
 
-            /*for (int i = 0; i < MotATrouver.Length; i++)
+            for (int i = 0; i < MotATrouver.Length; i++)
             {
-                /*if (MotATrouver[i].Equals(button.Text))
+                if (MotATrouver[i].Equals(Convert.ToChar(button.Text)))
                 {
                     int j = i;
-                    string replacement = txtMotATrouver.Text.Replace(txtMotATrouver.Text[j], MotATrouver[i]);
-
+                    txtMotATrouver.Text = txtMotATrouver.Text.Remove(j, 1).Insert(j, MotATrouver[i].ToString());
                 }
                 else
                 {
                     essaisRestants--;
+                    lblEssais.Text = essaisRestants.ToString(); 
                     nbErreurs++;
-                }*/
+                    lblNbErreurs.Text = nbErreurs.ToString(); 
+                }
+            }
+
+               
 
 
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
+            Random rand = new Random();
+            MotATrouver = strArr[rand.Next(strArr.Length)];
+            foreach (char c in MotATrouver)
+            {
+                txtMotATrouver.Text += '*'; 
+            }
 
         }
 

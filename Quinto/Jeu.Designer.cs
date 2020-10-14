@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstLettres = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNbMancheJouees = new System.Windows.Forms.Label();
@@ -38,15 +39,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblEssaisTotaux = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnManche = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTimer = new System.Windows.Forms.Label();
-            this.lblNbErreurs = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMotATrouver = new System.Windows.Forms.TextBox();
-            this.btnStart = new System.Windows.Forms.Button();
             this.bu = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -73,6 +65,16 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnManche = new System.Windows.Forms.Button();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.lblNbErreurs = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMotATrouver = new System.Windows.Forms.TextBox();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblBravo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,87 +192,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 166);
             this.panel1.TabIndex = 65;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(69, -86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 64;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(-12, -86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnManche
-            // 
-            this.btnManche.Enabled = false;
-            this.btnManche.Location = new System.Drawing.Point(602, 325);
-            this.btnManche.Name = "btnManche";
-            this.btnManche.Size = new System.Drawing.Size(109, 40);
-            this.btnManche.TabIndex = 118;
-            this.btnManche.Text = "Manche suivante";
-            this.btnManche.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(619, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 125;
-            this.label4.Text = "+";
-            // 
-            // lblTimer
-            // 
-            this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(584, 161);
-            this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(33, 13);
-            this.lblTimer.TabIndex = 124;
-            this.lblTimer.Text = "Timer";
-            // 
-            // lblNbErreurs
-            // 
-            this.lblNbErreurs.AutoSize = true;
-            this.lblNbErreurs.Location = new System.Drawing.Point(637, 162);
-            this.lblNbErreurs.Name = "lblNbErreurs";
-            this.lblNbErreurs.Size = new System.Drawing.Size(52, 13);
-            this.lblNbErreurs.TabIndex = 123;
-            this.lblNbErreurs.Text = "nbErreurs";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(690, 162);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 122;
-            this.label2.Text = "points";
-            // 
-            // txtMotATrouver
-            // 
-            this.txtMotATrouver.Location = new System.Drawing.Point(121, 336);
-            this.txtMotATrouver.Name = "txtMotATrouver";
-            this.txtMotATrouver.Size = new System.Drawing.Size(295, 20);
-            this.txtMotATrouver.TabIndex = 126;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(474, 325);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(108, 40);
-            this.btnStart.TabIndex = 127;
-            this.btnStart.Text = "C\'est parti !";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // bu
             // 
@@ -541,14 +462,101 @@
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.bu_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(69, -86);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(-12, -86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnManche
+            // 
+            this.btnManche.Enabled = false;
+            this.btnManche.Location = new System.Drawing.Point(602, 325);
+            this.btnManche.Name = "btnManche";
+            this.btnManche.Size = new System.Drawing.Size(109, 40);
+            this.btnManche.TabIndex = 118;
+            this.btnManche.Text = "Manche suivante";
+            this.btnManche.UseVisualStyleBackColor = true;
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(585, 193);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(39, 13);
+            this.lblTimer.TabIndex = 124;
+            this.lblTimer.Text = "Timer :";
+            // 
+            // lblNbErreurs
+            // 
+            this.lblNbErreurs.AutoSize = true;
+            this.lblNbErreurs.Location = new System.Drawing.Point(585, 161);
+            this.lblNbErreurs.Name = "lblNbErreurs";
+            this.lblNbErreurs.Size = new System.Drawing.Size(55, 13);
+            this.lblNbErreurs.TabIndex = 123;
+            this.lblNbErreurs.Text = "nbErreurs ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(637, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 13);
+            this.label2.TabIndex = 122;
+            this.label2.Text = "points (timer + erreurs)";
+            // 
+            // txtMotATrouver
+            // 
+            this.txtMotATrouver.Location = new System.Drawing.Point(121, 336);
+            this.txtMotATrouver.Name = "txtMotATrouver";
+            this.txtMotATrouver.Size = new System.Drawing.Size(295, 20);
+            this.txtMotATrouver.TabIndex = 126;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(474, 325);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(108, 40);
+            this.btnStart.TabIndex = 127;
+            this.btnStart.Text = "C\'est parti !";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblBravo
+            // 
+            this.lblBravo.AutoSize = true;
+            this.lblBravo.Location = new System.Drawing.Point(636, 294);
+            this.lblBravo.Name = "lblBravo";
+            this.lblBravo.Size = new System.Drawing.Size(47, 13);
+            this.lblBravo.TabIndex = 128;
+            this.lblBravo.Text = "Bravo !!!";
+            this.lblBravo.Visible = false;
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 450);
+            this.Controls.Add(this.lblBravo);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtMotATrouver);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblNbErreurs);
             this.Controls.Add(this.label2);
@@ -586,7 +594,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnManche;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblNbErreurs;
         private System.Windows.Forms.Label label2;
@@ -618,5 +625,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblBravo;
     }
 }

@@ -49,7 +49,6 @@
             this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // lstLexique
             // 

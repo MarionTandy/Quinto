@@ -16,17 +16,32 @@ namespace Quinto
         {
             InitializeComponent();
         }
-        private static SelectionNiveau singleSelectionNiveau = null ; 
+
+        #region Singleton
+        private static SelectionNiveau singleSelectionNiveau = null;
         public static SelectionNiveau Instance()
         {
-            if(singleSelectionNiveau == null)
+            if (singleSelectionNiveau == null)
             {
-                singleSelectionNiveau = new SelectionNiveau(); 
+                singleSelectionNiveau = new SelectionNiveau();
             }
-            return singleSelectionNiveau; 
+            return singleSelectionNiveau;
         }
-        
-      
+        private void SelectionNiveau_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleSelectionNiveau = null;
+        }
+        #endregion
+
+        #region
+        private void btnJouer_Click(object sender, EventArgs e)
+        {
+            Jeu.Instance().Show();
+            Jeu.Instance().Activate();
+        }
+        #endregion
+
+
 
 
     }

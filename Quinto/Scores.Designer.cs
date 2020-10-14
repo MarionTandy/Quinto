@@ -44,7 +44,6 @@
             this.lblScoreFacile.Size = new System.Drawing.Size(35, 13);
             this.lblScoreFacile.TabIndex = 0;
             this.lblScoreFacile.Text = "Facile";
-            this.lblScoreFacile.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblScoreDifficile
             // 

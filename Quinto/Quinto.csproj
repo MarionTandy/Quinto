@@ -115,11 +115,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\serializejson\serializejson\serializejson.csproj">
-      <Project>{85765874-13b4-4739-b0b6-d7fd7e75c2cc}</Project>
-      <Name>serializejson</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

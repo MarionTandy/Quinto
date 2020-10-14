@@ -49,7 +49,6 @@
             this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // lstLexique
             // 
@@ -69,6 +68,7 @@
             this.Controls.Add(this.txtMotAAjouter);
             this.Name = "Lexique";
             this.Text = "Ajoute des mots au lexique";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Lexique_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

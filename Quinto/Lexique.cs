@@ -17,15 +17,19 @@ namespace Quinto
         private Lexique()
         {
             InitializeComponent();
+            string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo" };
+            lstLexique.Items.AddRange(strArr);
+
         }
 
+        #region Singleton
         private static Lexique singleLexique = null;
 
         public static Lexique Instance()
         {
             if (singleLexique == null)
             {
-               singleLexique = new Lexique();
+                singleLexique = new Lexique();
             }
             return singleLexique;
         }
@@ -52,5 +56,11 @@ namespace Quinto
             using(StreamWriter sw = new StreamWriter(filepath,true))
             using(JsonWriter writer = new JsonTextWriter(sw)) { j.Serialize(writer, mot); }
         }
+
+        private void Lexique_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            singleLexique = null;
+        }
+        #endregion
     }
 }

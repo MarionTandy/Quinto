@@ -19,9 +19,9 @@ namespace Quinto
 
         private void jouerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SelectionNiveau.Instance().MdiParent = this ;
+            SelectionNiveau.Instance().MdiParent = this;
             SelectionNiveau.Instance().Show();
-            SelectionNiveau.Instance().Activate(); 
+            SelectionNiveau.Instance().Activate();
         }
 
         private void lexiqueToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -29,6 +29,13 @@ namespace Quinto
             Lexique.Instance().MdiParent = this;
             Lexique.Instance().Show();
             Lexique.Instance().Activate();
+        }
+
+        private void scoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Scores.Instance().MdiParent = this;
+            Scores.Instance().Show();
+            Scores.Instance().Activate();
         }
     }
 }

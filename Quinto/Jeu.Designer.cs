@@ -75,6 +75,8 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblBravo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblPoints = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(585, 86);
+            this.label1.Location = new System.Drawing.Point(585, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 2;
@@ -98,16 +100,16 @@
             // lblNbMancheJouees
             // 
             this.lblNbMancheJouees.AutoSize = true;
-            this.lblNbMancheJouees.Location = new System.Drawing.Point(637, 86);
+            this.lblNbMancheJouees.Location = new System.Drawing.Point(637, 27);
             this.lblNbMancheJouees.Name = "lblNbMancheJouees";
-            this.lblNbMancheJouees.Size = new System.Drawing.Size(19, 13);
+            this.lblNbMancheJouees.Size = new System.Drawing.Size(13, 13);
             this.lblNbMancheJouees.TabIndex = 3;
-            this.lblNbMancheJouees.Text = "nb";
+            this.lblNbMancheJouees.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(662, 86);
+            this.label3.Location = new System.Drawing.Point(662, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 13);
             this.label3.TabIndex = 4;
@@ -116,7 +118,7 @@
             // lblNbManchesTotal
             // 
             this.lblNbManchesTotal.AutoSize = true;
-            this.lblNbManchesTotal.Location = new System.Drawing.Point(690, 86);
+            this.lblNbManchesTotal.Location = new System.Drawing.Point(690, 27);
             this.lblNbManchesTotal.Name = "lblNbManchesTotal";
             this.lblNbManchesTotal.Size = new System.Drawing.Size(43, 13);
             this.lblNbManchesTotal.TabIndex = 5;
@@ -125,7 +127,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(585, 125);
+            this.label5.Location = new System.Drawing.Point(585, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 6;
@@ -134,7 +136,7 @@
             // lblEssais
             // 
             this.lblEssais.AutoSize = true;
-            this.lblEssais.Location = new System.Drawing.Point(664, 125);
+            this.lblEssais.Location = new System.Drawing.Point(664, 66);
             this.lblEssais.Name = "lblEssais";
             this.lblEssais.Size = new System.Drawing.Size(19, 13);
             this.lblEssais.TabIndex = 7;
@@ -143,7 +145,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(690, 125);
+            this.label7.Location = new System.Drawing.Point(690, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 13);
             this.label7.TabIndex = 8;
@@ -152,7 +154,7 @@
             // lblEssaisTotaux
             // 
             this.lblEssaisTotaux.AutoSize = true;
-            this.lblEssaisTotaux.Location = new System.Drawing.Point(718, 124);
+            this.lblEssaisTotaux.Location = new System.Drawing.Point(718, 65);
             this.lblEssaisTotaux.Name = "lblEssaisTotaux";
             this.lblEssaisTotaux.Size = new System.Drawing.Size(43, 13);
             this.lblEssaisTotaux.TabIndex = 9;
@@ -493,16 +495,16 @@
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(585, 193);
+            this.lblTimer.Location = new System.Drawing.Point(636, 134);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(39, 13);
+            this.lblTimer.Size = new System.Drawing.Size(36, 13);
             this.lblTimer.TabIndex = 124;
-            this.lblTimer.Text = "Timer :";
+            this.lblTimer.Text = "Timer ";
             // 
             // lblNbErreurs
             // 
             this.lblNbErreurs.AutoSize = true;
-            this.lblNbErreurs.Location = new System.Drawing.Point(585, 161);
+            this.lblNbErreurs.Location = new System.Drawing.Point(585, 102);
             this.lblNbErreurs.Name = "lblNbErreurs";
             this.lblNbErreurs.Size = new System.Drawing.Size(55, 13);
             this.lblNbErreurs.TabIndex = 123;
@@ -511,7 +513,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(637, 225);
+            this.label2.Location = new System.Drawing.Point(637, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 122;
@@ -549,11 +551,31 @@
             this.lblBravo.Text = "Bravo !!!";
             this.lblBravo.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(585, 134);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Timer : ";
+            // 
+            // lblPoints
+            // 
+            this.lblPoints.AutoSize = true;
+            this.lblPoints.Location = new System.Drawing.Point(584, 170);
+            this.lblPoints.Name = "lblPoints";
+            this.lblPoints.Size = new System.Drawing.Size(13, 13);
+            this.lblPoints.TabIndex = 130;
+            this.lblPoints.Text = "0";
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 450);
+            this.Controls.Add(this.lblPoints);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblBravo);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtMotATrouver);
@@ -627,5 +649,7 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblBravo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPoints;
     }
 }

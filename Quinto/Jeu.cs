@@ -24,7 +24,7 @@ namespace Quinto
         string MotATrouver;
         int essaisRestants = 7/*= Niveau.NbEssais*/;
         int nbErreurs = 0;
-        string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo" };
+        string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo", "porte-clef" };
 
         #region Singleton
         private static Jeu singleJeu = null;
@@ -48,9 +48,8 @@ namespace Quinto
         {
             Button button = sender as Button;
             lstLettres.Items.Add(button.Text);
+            button.Enabled = false; //penser à repasser les boutons en enable sur Manche suivante
             VerifierInputUtilisateur(button.Text); 
-
-
 
         }
         
@@ -62,6 +61,7 @@ namespace Quinto
             nbErreurs = 0;
             lblNbErreurs.Text = nbErreurs.ToString();
             timer.Enabled = true;
+            lblNbMancheJouees.Text = (int.Parse(lblNbMancheJouees.Text) + 1).ToString(); 
             GenererMotCache(/*listeDeMots, MotAtrouver, txtMotAtrouver.Text*/); 
         }
         int i = 0;
@@ -69,7 +69,7 @@ namespace Quinto
         {
 
             i++;
-            lblTimer.Text = "Timer : " + i.ToString();
+            lblTimer.Text = i.ToString();
 
         }
 
@@ -93,10 +93,10 @@ namespace Quinto
 
             else
             {
-                essaisRestants--;
-                lblEssais.Text = essaisRestants.ToString();
-                nbErreurs++;
-                lblNbErreurs.Text = nbErreurs.ToString();
+                    nbErreurs++;
+                    lblNbErreurs.Text = nbErreurs.ToString();
+                    essaisRestants--;
+                    lblEssais.Text = essaisRestants.ToString();
             }
         }
 
@@ -106,9 +106,14 @@ namespace Quinto
             MotATrouver = strArr[rand.Next(strArr.Length)]; 
             //MotATrouver = listeDeMots[rand.Next(listeDeMots.Lenght)] ; 
             foreach (char c in MotATrouver)
-            {
+                if (c == '-')
+                {
+                    txtMotATrouver.Text += '-'; 
+                }
+                else 
+                {
                 txtMotATrouver.Text += '*';
-            }
+                }
         }
 
         public void VerifierMotComplet(string motATrouver, string motCache)
@@ -119,8 +124,24 @@ namespace Quinto
                 btnStart.Enabled = false;
                 btnManche.Enabled = true;
                 btnManche.Focus();
-                timer.Stop(); 
+                timer.Stop();
+                int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
+                lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
             }
+        }
+
+        /*public void VerifierFinDePartie()
+        {
+            if (int.Parse(lblNbMancheJouees))
+            {
+
+            }
+        }*/
+
+        public string CalculerScore(int pointsManchePrecedente, int timer, int nombreErreurs)
+        {
+            int score = pointsManchePrecedente + timer + nombreErreurs;
+            return score.ToString(); 
         }
         #endregion
 

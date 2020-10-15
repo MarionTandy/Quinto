@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Mot.cs" />
     <Compile Include="Mots.cs" />
+    <Compile Include="Niveau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scores.cs">

@@ -49,13 +49,13 @@ namespace serializejson
         }
 
 
-        /*public bool loadjson(string pathRepDocument)
+        public bool loadjson(string pathRepDocument)
         {
             FileStream Chad = new FileStream($@"{pathRepDocument}\Lexique.json", FileMode.Open, FileAccess.Read, FileShare.Read);
             StreamReader sr = new StreamReader(Chad);
             JsonSerializer Jason = new JsonSerializer();
             Jason.Deserialize(sr, typeof(List<Lexique>));
             return true;
-        }*/
+        }
     }
 }

@@ -51,13 +51,13 @@ namespace Quinto
 
         }
 
-        public void SaveJson(Mot mot)
+        /*public void SaveJson(Mot mot)
         {
             string filepath = @"C:\Users\CDA\source\repos\Lexique.json";
             JsonSerializer j = new JsonSerializer();
             using(StreamWriter sw = new StreamWriter(filepath,true))
             using(JsonWriter writer = new JsonTextWriter(sw)) { j.Serialize(writer, mot); }
-        }
+        }*/
 
         private void Lexique_FormClosed(object sender, FormClosedEventArgs e)
         {

@@ -145,9 +145,5 @@ namespace Quinto
         }
         #endregion
 
-        public void txtMotATrouver_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

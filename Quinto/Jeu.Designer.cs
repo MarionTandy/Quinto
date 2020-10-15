@@ -38,7 +38,7 @@
             this.lblEssais = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblEssaisTotaux = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlClavier = new System.Windows.Forms.Panel();
             this.bu = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
@@ -78,7 +78,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlClavier.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstLettres
@@ -109,7 +109,7 @@
             this.lblNbMancheJouees.Name = "lblNbMancheJouees";
             this.lblNbMancheJouees.Size = new System.Drawing.Size(24, 27);
             this.lblNbMancheJouees.TabIndex = 3;
-            this.lblNbMancheJouees.Text = "0";
+            this.lblNbMancheJouees.Text = "1";
             // 
             // label3
             // 
@@ -171,41 +171,42 @@
             this.lblEssaisTotaux.TabIndex = 9;
             this.lblEssaisTotaux.Text = "3";
             // 
-            // panel1
+            // pnlClavier
             // 
-            this.panel1.Controls.Add(this.bu);
-            this.panel1.Controls.Add(this.button27);
-            this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button19);
-            this.panel1.Controls.Add(this.button22);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button26);
-            this.panel1.Controls.Add(this.button25);
-            this.panel1.Controls.Add(this.button24);
-            this.panel1.Controls.Add(this.button23);
-            this.panel1.Controls.Add(this.button21);
-            this.panel1.Controls.Add(this.button20);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(84, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 166);
-            this.panel1.TabIndex = 65;
+            this.pnlClavier.Controls.Add(this.bu);
+            this.pnlClavier.Controls.Add(this.button27);
+            this.pnlClavier.Controls.Add(this.button18);
+            this.pnlClavier.Controls.Add(this.button17);
+            this.pnlClavier.Controls.Add(this.button16);
+            this.pnlClavier.Controls.Add(this.button15);
+            this.pnlClavier.Controls.Add(this.button14);
+            this.pnlClavier.Controls.Add(this.button13);
+            this.pnlClavier.Controls.Add(this.button12);
+            this.pnlClavier.Controls.Add(this.button11);
+            this.pnlClavier.Controls.Add(this.button19);
+            this.pnlClavier.Controls.Add(this.button22);
+            this.pnlClavier.Controls.Add(this.button10);
+            this.pnlClavier.Controls.Add(this.button9);
+            this.pnlClavier.Controls.Add(this.button8);
+            this.pnlClavier.Controls.Add(this.button7);
+            this.pnlClavier.Controls.Add(this.button6);
+            this.pnlClavier.Controls.Add(this.button5);
+            this.pnlClavier.Controls.Add(this.button4);
+            this.pnlClavier.Controls.Add(this.button3);
+            this.pnlClavier.Controls.Add(this.button26);
+            this.pnlClavier.Controls.Add(this.button25);
+            this.pnlClavier.Controls.Add(this.button24);
+            this.pnlClavier.Controls.Add(this.button23);
+            this.pnlClavier.Controls.Add(this.button21);
+            this.pnlClavier.Controls.Add(this.button20);
+            this.pnlClavier.Controls.Add(this.button2);
+            this.pnlClavier.Controls.Add(this.button1);
+            this.pnlClavier.Enabled = false;
+            this.pnlClavier.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlClavier.Location = new System.Drawing.Point(86, 17);
+            this.pnlClavier.Name = "pnlClavier";
+            this.pnlClavier.Size = new System.Drawing.Size(444, 166);
+            this.pnlClavier.TabIndex = 65;
             // 
             // bu
             // 
@@ -504,6 +505,7 @@
             this.btnManche.TabIndex = 118;
             this.btnManche.Text = "Manche suivante";
             this.btnManche.UseVisualStyleBackColor = true;
+            this.btnManche.Click += new System.EventHandler(this.btnManche_Click);
             // 
             // lblTimer
             // 
@@ -542,6 +544,7 @@
             this.txtMotATrouver.Name = "txtMotATrouver";
             this.txtMotATrouver.Size = new System.Drawing.Size(295, 33);
             this.txtMotATrouver.TabIndex = 126;
+            this.txtMotATrouver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnStart
             // 
@@ -615,7 +618,7 @@
             this.Controls.Add(this.lblNbErreurs);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnManche);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlClavier);
             this.Controls.Add(this.lblEssaisTotaux);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblEssais);
@@ -628,7 +631,7 @@
             this.Name = "Jeu";
             this.Text = "Jeu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Jeu_FormClosed);
-            this.panel1.ResumeLayout(false);
+            this.pnlClavier.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -644,7 +647,7 @@
         private System.Windows.Forms.Label lblEssais;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblEssaisTotaux;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlClavier;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnManche;

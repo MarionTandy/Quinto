@@ -44,6 +44,12 @@ namespace Quinto
 
 
         #region Evennements
+
+        /*private void Jeu_Load(object sender, EventArgs e)
+        {
+            GestionContextes(Contextes.Initial);
+        }*/
+
         private void bu_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -57,12 +63,13 @@ namespace Quinto
         
         private void btnStart_Click(object sender, EventArgs e)
         {
-           
+            //GestionContextes(Contextes.DebutDeManche); //Gère tout ce qui est en dessous
             essaisRestants = 3/*= Niveau.NbEssais*/;
-            lblEssais.Text = essaisRestants.ToString();
-            nbErreurs = 0;
-            lblNbErreurs.Text = nbErreurs.ToString();
-            timer.Enabled = true;
+            lblEssais.Text = essaisRestants.ToString();//A supprimmer
+            nbErreurs = 0;//A supprimmer
+            lblNbErreurs.Text = nbErreurs.ToString();//A supprimer
+            timer.Enabled = true;//A supprimer
+            
             lblNbMancheJouees.Text = (int.Parse(lblNbMancheJouees.Text) + 1).ToString(); 
             GenererMotCache(/*listeDeMots, MotAtrouver, txtMotAtrouver.Text*/); 
         }
@@ -73,6 +80,20 @@ namespace Quinto
             i++;
             lblTimer.Text = i.ToString();
 
+        }
+
+        private void btnManche_Click(object sender, EventArgs e)
+        {
+         //   GestionContextes(Contextes.InterManche); 
+            //lblEssais.Text = niveau.nbEssais ; 
+            nbErreurs = 0;
+            lblNbErreurs.Text = nbErreurs.ToString();
+            lblBravo.Visible = false;
+            btnManche.Enabled = false;
+            lstLettres.Items.Clear();
+            txtMotATrouver.Clear();
+            btnStart.Enabled = true;
+            btnStart.Focus(); 
         }
 
         #endregion
@@ -123,11 +144,13 @@ namespace Quinto
         {
             if (motATrouver.Equals(motCache))
             {
+                //GestionContextes(Contextes.FinDeManche); 
                 lblBravo.Visible = true;
                 btnStart.Enabled = false;
                 btnManche.Enabled = true;
                 btnManche.Focus();
                 timer.Stop();
+                pnlClavier.Enabled = false; 
                 int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
                 lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
                 return true; 
@@ -157,6 +180,71 @@ namespace Quinto
             int score = pointsManchePrecedente + timer + nombreErreurs;
             return score.ToString(); 
         }
+
+        public enum Contextes
+        {
+            Initial = 0,
+            DebutDeManche = 1,
+            FinDeManche = 2,
+            InterManche = 3,
+
+
+        }
+        public void GestionContextes(Contextes contexte)
+        {
+            switch (contexte)
+            {
+                case Contextes.Initial: //ouverture de la fenêtre de jeu
+                    btnManche.Enabled = false;
+                    lblBravo.Visible = false;
+                    btnStart.Enabled = true;
+                    txtMotATrouver.Enabled = false;
+                    pnlClavier.Enabled = false;
+                    //lblNbManchesTotal.Text = niveau.NbManches.ToString() ; 
+                    //lblEssais.Text = niveau.NbEssais.ToString() ; 
+                    //lblEssaisTotaux.Text = niveau.NbEssais.ToString() ;
+                    lblNbErreurs.Text = 0.ToString();
+                    lblPoints.Text = 0.ToString();
+                    txtMotATrouver.Clear();
+                    lstLettres.Items.Clear();
+                    break;
+
+                case Contextes.DebutDeManche: //btnStart
+                    timer.Enabled = true;
+                    pnlClavier.Enabled = true;
+                    btnStart.Enabled = false;
+                    break;
+
+                case Contextes.FinDeManche://MotComplet()
+                    timer.Stop();
+                    lblBravo.Visible = true;
+                    btnManche.Enabled = true;
+                    btnManche.Focus();
+                    lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
+                    pnlClavier.Enabled = true;
+                    pnlClavier.Enabled = false;
+                    break;
+
+                case Contextes.InterManche://btnManche
+                    lblNbMancheJouees.Text = (int.Parse(lblNbMancheJouees.Text) + 1).ToString();
+                    //lblEssais.Text = niveau.NbEssais.ToString() ; 
+                    lblNbErreurs.Text = 0.ToString();
+                    lstLettres.Items.Clear();
+                    txtMotATrouver.Clear();
+                    lblBravo.Visible = false;
+                    btnManche.Enabled = false;
+                    btnStart.Enabled = true;
+                    btnStart.Focus();
+                    break; 
+
+            }
+
+
+
+            }
+
+       
+
         #endregion
         //IMPLEMENTER EVENTS SUR CLIC DU BOUTON NOUVELLE MANCHE
     }

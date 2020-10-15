@@ -57,5 +57,6 @@ namespace serializejson
             Jason.Deserialize(sr, typeof(List<Lexique>));
             return true;
         }
+        
     }
 }

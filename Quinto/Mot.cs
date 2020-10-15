@@ -27,6 +27,15 @@ namespace Quinto
         {
             return (texte != null) ? texte.GetHashCode() : 0;
         }
+        public static bool IsMotOk(string value)
+        {
+            if (value == null || value.Length < 5 || value.Length > 25) return false;
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (!char.IsLetter(value[i])) return false;
+            }
+            return true;
+        }
 
     }
 

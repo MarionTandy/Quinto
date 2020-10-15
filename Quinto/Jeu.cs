@@ -246,6 +246,10 @@ namespace Quinto
        
 
         #endregion
-        //IMPLEMENTER EVENTS SUR CLIC DU BOUTON NOUVELLE MANCHE
+
+        public void txtMotATrouver_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -18,8 +18,7 @@ namespace Quinto
         private Lexique()
         {
             InitializeComponent();
-            string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo" };
-            lstLexique.Items.AddRange(strArr);
+            
 
         }
 
@@ -37,26 +36,39 @@ namespace Quinto
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            Mot mot = new Mot();
-            mot.Texte = txtMotAAjouter.Text;
-            mots.Add(mot);
-            txtMotAAjouter.Clear();
-            Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);
+            if (Mot.IsMotOk(txtMotAAjouter.Text))
+            {
+                Mot mot = new Mot();
+                mot.Texte = txtMotAAjouter.Text;
+                lstLexique.Items.Add(mot.Texte);
+                mots.Add(mot);
+                txtMotAAjouter.Clear();
+                Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);
+            }
+            else
+            {
+                MessageBox.Show("La saisie de votre mot n'est pas valide, rentrer un mot sans chiffre, plus grand que 5 lettres et plus petit que 25", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
 
         private void txtMotAAjouter_TextChanged(object sender, EventArgs e)
         {
+            if (!Mot.IsMotOk(txtMotAAjouter.Text)) errorProvider1.SetError(txtMotAAjouter, "Ce mot ne peut pas contenir de chiffres, ni etre inférieur a 5 lettres ou supérieur a 25!!");
+            else
+                errorProvider1.Clear();
 
         }
-
-        public void SaveJson(Mot mot)
+        private void Lexique_Load(object sender, EventArgs e)
         {
-            string filepath = @"C:\Users\CDA\source\repos\Lexique.json";
-            JsonSerializer j = new JsonSerializer();
-            using(StreamWriter sw = new StreamWriter(filepath,true))
-            using(JsonWriter writer = new JsonTextWriter(sw)) { j.Serialize(writer, mot); }
+            mots = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
+            foreach (var item in mots)
+            {
+                lstLexique.Items.Add(item.Texte);
+
+            }
+
         }
 
         private void Lexique_FormClosed(object sender, FormClosedEventArgs e)

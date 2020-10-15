@@ -39,10 +39,24 @@ namespace Quinto
             Jeu.Instance().Show();
             Jeu.Instance().Activate();
         }
+
+
+
         #endregion
 
+        private void rdbFacile_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void rdbDifficile_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void rdbExpert_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtMotAAjouter = new System.Windows.Forms.TextBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.lstLexique = new System.Windows.Forms.ListBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMotAAjouter
@@ -49,6 +52,7 @@
             this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // lstLexique
             // 
@@ -57,6 +61,11 @@
             this.lstLexique.Name = "lstLexique";
             this.lstLexique.Size = new System.Drawing.Size(252, 368);
             this.lstLexique.TabIndex = 2;
+            this.lstLexique.SelectedIndexChanged += new System.EventHandler(this.lstLexique_SelectedIndexChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Lexique
             // 
@@ -69,6 +78,8 @@
             this.Name = "Lexique";
             this.Text = "Ajoute des mots au lexique";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Lexique_FormClosed);
+            this.Load += new System.EventHandler(this.Lexique_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,5 +90,6 @@
         private System.Windows.Forms.TextBox txtMotAAjouter;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.ListBox lstLexique;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

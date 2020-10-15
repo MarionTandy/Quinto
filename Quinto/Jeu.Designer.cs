@@ -525,6 +525,7 @@
             this.txtMotATrouver.Name = "txtMotATrouver";
             this.txtMotATrouver.Size = new System.Drawing.Size(295, 20);
             this.txtMotATrouver.TabIndex = 126;
+            this.txtMotATrouver.TextChanged += new System.EventHandler(this.txtMotATrouver_TextChanged);
             // 
             // btnStart
             // 

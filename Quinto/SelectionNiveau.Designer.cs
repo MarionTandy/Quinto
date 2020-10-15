@@ -54,6 +54,7 @@
             this.rdbFacile.TabStop = true;
             this.rdbFacile.Text = "Facile";
             this.rdbFacile.UseVisualStyleBackColor = true;
+            this.rdbFacile.CheckedChanged += new System.EventHandler(this.rdbFacile_CheckedChanged);
             // 
             // rdbDifficile
             // 
@@ -65,6 +66,7 @@
             this.rdbDifficile.TabStop = true;
             this.rdbDifficile.Text = "Difficile";
             this.rdbDifficile.UseVisualStyleBackColor = true;
+            this.rdbDifficile.CheckedChanged += new System.EventHandler(this.rdbDifficile_CheckedChanged);
             // 
             // rdbExpert
             // 
@@ -76,6 +78,7 @@
             this.rdbExpert.TabStop = true;
             this.rdbExpert.Text = "Expert";
             this.rdbExpert.UseVisualStyleBackColor = true;
+            this.rdbExpert.CheckedChanged += new System.EventHandler(this.rdbExpert_CheckedChanged);
             // 
             // SelectionNiveau
             // 

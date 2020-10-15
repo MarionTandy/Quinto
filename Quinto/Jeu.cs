@@ -22,8 +22,8 @@ namespace Quinto
 
         }
         string MotATrouver;
-        int essaisRestants = 7/*= Niveau.NbEssais*/;
-        int nbErreurs = 0;
+        int essaisRestants;// VARIABLE INUTILE? JE PEUX DIRECT UTILISER int.Parse(lblEssais.Text) ou niveau.nbEssais.ToString() ? */
+        int nbErreurs = 0;//Pareil que pour essais restants non ? 
         string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo", "porte-clef" };
 
         #region Singleton
@@ -49,14 +49,16 @@ namespace Quinto
             Button button = sender as Button;
             lstLettres.Items.Add(button.Text);
             button.Enabled = false; //penser à repasser les boutons en enable sur Manche suivante
-            VerifierInputUtilisateur(button.Text); 
-
+            VerifierInputUtilisateur(button.Text);
+            MotComplet(MotATrouver, txtMotATrouver.Text);
+            VerifierVictoire(lblNbMancheJouees.Text, lblNbManchesTotal.Text, MotATrouver, txtMotATrouver.Text);
+            VerifierDefaite(lblEssais.Text);
         }
         
         private void btnStart_Click(object sender, EventArgs e)
         {
            
-            essaisRestants = 7/*= Niveau.NbEssais*/;
+            essaisRestants = 3/*= Niveau.NbEssais*/;
             lblEssais.Text = essaisRestants.ToString();
             nbErreurs = 0;
             lblNbErreurs.Text = nbErreurs.ToString();
@@ -88,7 +90,7 @@ namespace Quinto
                         txtMotATrouver.Text = txtMotATrouver.Text.Remove(j, 1).Insert(j, MotATrouver[i].ToString());
                     }
                 }
-                VerifierMotComplet(MotATrouver, txtMotATrouver.Text); 
+                
             }
 
             else
@@ -97,6 +99,7 @@ namespace Quinto
                     lblNbErreurs.Text = nbErreurs.ToString();
                     essaisRestants--;
                     lblEssais.Text = essaisRestants.ToString();
+                   
             }
         }
 
@@ -116,7 +119,7 @@ namespace Quinto
                 }
         }
 
-        public void VerifierMotComplet(string motATrouver, string motCache)
+        public bool MotComplet(string motATrouver, string motCache)
         {
             if (motATrouver.Equals(motCache))
             {
@@ -127,16 +130,27 @@ namespace Quinto
                 timer.Stop();
                 int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
                 lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
+                return true; 
             }
+            else { return false; }
         }
 
-        /*public void VerifierFinDePartie()
+        public void VerifierVictoire(string manchesJouees, string manchesTotales, string motATrouver, string motCache)
         {
-            if (int.Parse(lblNbMancheJouees))
+            if ((int.Parse(manchesJouees) == int.Parse(manchesTotales)) && MotComplet(motATrouver, motCache))
             {
-
+                Victoire victoire = new Victoire();
+                victoire.Show(); 
             }
-        }*/
+        }
+        public void VerifierDefaite(string essaisRestant)
+        {
+            if (int.Parse(essaisRestant) == 0)
+            {
+                singleJeu.Close();
+                MessageBox.Show("Perdu ! Dommage, vous ferez mieux la prochaine fois :)", "Perdu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+            }
+        }
 
         public string CalculerScore(int pointsManchePrecedente, int timer, int nombreErreurs)
         {

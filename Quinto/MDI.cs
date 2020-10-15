@@ -15,7 +15,6 @@ namespace Quinto
         public MDI()
         {
             InitializeComponent();
-
         }
 
         private void jouerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,11 +36,6 @@ namespace Quinto
             Scores.Instance().MdiParent = this;
             Scores.Instance().Show();
             Scores.Instance().Activate();
-        }
-
-        private void MDI_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }

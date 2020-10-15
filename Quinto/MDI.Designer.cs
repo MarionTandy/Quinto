@@ -121,7 +121,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDI";
             this.Text = "Menu principal";
-            this.Load += new System.EventHandler(this.MDI_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

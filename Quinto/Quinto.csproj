@@ -86,6 +86,12 @@
       <DependentUpon>SelectionNiveau.cs</DependentUpon>
     </Compile>
     <Compile Include="Serialisation.cs" />
+    <Compile Include="Victoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Victoire.Designer.cs">
+      <DependentUpon>Victoire.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Jeu.resx">
       <DependentUpon>Jeu.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionNiveau.resx">
       <DependentUpon>SelectionNiveau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Victoire.resx">
+      <DependentUpon>Victoire.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace Quinto
 {
@@ -35,7 +35,7 @@ namespace Quinto
             return singleLexique;
         }
 
-        private void btnAjouter_Click(object sender, EventArgs e)
+       /* private void btnAjouter_Click(object sender, EventArgs e)
         {
             Mot mot = new Mot();
             mot.Texte = txtMotAAjouter.Text;
@@ -44,14 +44,20 @@ namespace Quinto
             Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);
 
 
-        }
+        }*/
 
         private void txtMotAAjouter_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        
+        public void SaveJson(Mot mot)
+        {
+            string filepath = @"C:\Users\CDA\source\repos\Lexique.json";
+            JsonSerializer j = new JsonSerializer();
+            using(StreamWriter sw = new StreamWriter(filepath,true))
+            using(JsonWriter writer = new JsonTextWriter(sw)) { j.Serialize(writer, mot); }
+        }
 
         private void Lexique_FormClosed(object sender, FormClosedEventArgs e)
         {

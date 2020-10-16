@@ -18,8 +18,6 @@ namespace Quinto
         {
             InitializeComponent();
            
-
-
         }
         string MotATrouver;
         int essaisRestants;// VARIABLE INUTILE? JE PEUX DIRECT UTILISER int.Parse(lblEssais.Text) ou niveau.nbEssais.ToString() ? */
@@ -45,10 +43,10 @@ namespace Quinto
 
         #region Evennements
 
-        /*private void Jeu_Load(object sender, EventArgs e)
+        private void Jeu_Load(object sender, EventArgs e)
         {
             GestionContextes(Contextes.Initial);
-        }*/
+        }
 
         private void bu_Click(object sender, EventArgs e)
         {
@@ -64,13 +62,13 @@ namespace Quinto
         private void btnStart_Click(object sender, EventArgs e)
         {
             //GestionContextes(Contextes.DebutDeManche); //Gère tout ce qui est en dessous
-            essaisRestants = 3/*= Niveau.NbEssais*/;
+            essaisRestants = 7/*= Niveau.NbEssais*/;
             lblEssais.Text = essaisRestants.ToString();//A supprimmer
             nbErreurs = 0;//A supprimmer
             lblNbErreurs.Text = nbErreurs.ToString();//A supprimer
             timer.Enabled = true;//A supprimer
-            
-            lblNbMancheJouees.Text = (int.Parse(lblNbMancheJouees.Text) + 1).ToString(); 
+            pnlClavier.Enabled = true;
+            RegenererClavier();
             GenererMotCache(/*listeDeMots, MotAtrouver, txtMotAtrouver.Text*/); 
         }
         int i = 0;
@@ -93,7 +91,8 @@ namespace Quinto
             lstLettres.Items.Clear();
             txtMotATrouver.Clear();
             btnStart.Enabled = true;
-            btnStart.Focus(); 
+            btnStart.Focus();
+            lblNbMancheJouees.Text = (int.Parse(lblNbMancheJouees.Text) + 1).ToString();
         }
 
         #endregion
@@ -109,6 +108,7 @@ namespace Quinto
                     {
                         int j = i;
                         txtMotATrouver.Text = txtMotATrouver.Text.Remove(j, 1).Insert(j, MotATrouver[i].ToString());
+                        
                     }
                 }
                 
@@ -124,11 +124,10 @@ namespace Quinto
             }
         }
 
-        public void GenererMotCache(/*IEnumerable<string> listeDeMots, string motATrouver, string motCache*/)
+        public void GenererMotCache()
         {
             Random rand = new Random();
             MotATrouver = strArr[rand.Next(strArr.Length)]; 
-            //MotATrouver = listeDeMots[rand.Next(listeDeMots.Lenght)] ; 
             foreach (char c in MotATrouver)
                 if (c == '-')
                 {
@@ -152,7 +151,7 @@ namespace Quinto
                 timer.Stop();
                 pnlClavier.Enabled = false; 
                 int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
-                lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
+                lblPoints.Text = CalculerScore();
                 return true; 
             }
             else { return false; }
@@ -171,13 +170,13 @@ namespace Quinto
             if (int.Parse(essaisRestant) == 0)
             {
                 singleJeu.Close();
-                MessageBox.Show("Perdu ! Dommage, vous ferez mieux la prochaine fois :)", "Perdu", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                MessageBox.Show("Perdu ! Dommage, vous ferez mieux la prochaine fois :)", "Perdu", MessageBoxButtons.OK, MessageBoxIcon.Information); 
             }
         }
 
-        public string CalculerScore(int pointsManchePrecedente, int timer, int nombreErreurs)
+        public string CalculerScore()
         {
-            int score = pointsManchePrecedente + timer + nombreErreurs;
+            int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
             return score.ToString(); 
         }
 
@@ -212,6 +211,7 @@ namespace Quinto
                 case Contextes.DebutDeManche: //btnStart
                     timer.Enabled = true;
                     pnlClavier.Enabled = true;
+                    RegenererClavier(); 
                     btnStart.Enabled = false;
                     break;
 
@@ -220,8 +220,8 @@ namespace Quinto
                     lblBravo.Visible = true;
                     btnManche.Enabled = true;
                     btnManche.Focus();
-                    lblPoints.Text = CalculerScore(int.Parse(lblPoints.Text), int.Parse(lblTimer.Text), int.Parse(lblNbErreurs.Text));
-                    pnlClavier.Enabled = true;
+                    lblPoints.Text = CalculerScore();
+                   
                     pnlClavier.Enabled = false;
                     break;
 
@@ -236,13 +236,15 @@ namespace Quinto
                     btnStart.Enabled = true;
                     btnStart.Focus();
                     break; 
-
             }
-
-
-
+        }
+        public void RegenererClavier()
+        {
+            foreach (Control button in pnlClavier.Controls)
+            {
+                button.Enabled = true; 
             }
-
+        }
        
 
         #endregion

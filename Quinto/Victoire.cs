@@ -15,8 +15,9 @@ namespace Quinto
         public Victoire()
         {
             InitializeComponent();
+            lblScore.Text = Jeu.Instance().CalculerScore(); 
         }
 
-      
+        
     }
 }

@@ -66,7 +66,7 @@ namespace Quinto
             foreach (var item in mots)
             {
                 lstLexique.Items.Add(item.Texte);
-
+                
             }
 
         }

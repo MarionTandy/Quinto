@@ -14,6 +14,7 @@ namespace Quinto
 {
     public partial class Jeu : Form
     {
+        Mots motsrandom = new Mots();
         private Jeu()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace Quinto
         string MotATrouver;
         int essaisRestants;// VARIABLE INUTILE? JE PEUX DIRECT UTILISER int.Parse(lblEssais.Text) ou niveau.nbEssais.ToString() ? */
         int nbErreurs = 0;//Pareil que pour essais restants non ? 
-        string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo", "porte-clef" };
+       
 
         #region Singleton
         private static Jeu singleJeu = null;
@@ -126,8 +127,12 @@ namespace Quinto
 
         public void GenererMotCache()
         {
+            motsrandom = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
             Random rand = new Random();
-            MotATrouver = strArr[rand.Next(strArr.Length)]; 
+            
+
+            int nb = rand.Next(0, motsrandom.Count);
+            MotATrouver = motsrandom.ElementAt(nb).Texte ; 
             foreach (char c in MotATrouver)
                 if (c == '-')
                 {

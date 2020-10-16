@@ -40,7 +40,8 @@ namespace Quinto
             {
                 Mot mot = new Mot();
                 mot.Texte = txtMotAAjouter.Text;
-                lstLexique.Items.Add(mot.Texte);
+                if (!lstLexique.Items.Contains(mot.Texte)){
+                    lstLexique.Items.Add(mot.Texte); }
                 mots.Add(mot);
                 txtMotAAjouter.Clear();
                 Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);

@@ -149,7 +149,7 @@
             this.lblEssais.Name = "lblEssais";
             this.lblEssais.Size = new System.Drawing.Size(24, 27);
             this.lblEssais.TabIndex = 7;
-            this.lblEssais.Text = "3";
+            this.lblEssais.Text = "7";
             // 
             // label7
             // 
@@ -169,7 +169,7 @@
             this.lblEssaisTotaux.Name = "lblEssaisTotaux";
             this.lblEssaisTotaux.Size = new System.Drawing.Size(24, 27);
             this.lblEssaisTotaux.TabIndex = 9;
-            this.lblEssaisTotaux.Text = "3";
+            this.lblEssaisTotaux.Text = "7";
             // 
             // pnlClavier
             // 

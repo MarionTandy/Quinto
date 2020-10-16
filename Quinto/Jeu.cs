@@ -14,6 +14,7 @@ namespace Quinto
 {
     public partial class Jeu : Form
     {
+        Mots motsrandom = new Mots();
         private Jeu()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Quinto
         string MotATrouver;
         int essaisRestants;// VARIABLE INUTILE? JE PEUX DIRECT UTILISER int.Parse(lblEssais.Text) ou niveau.nbEssais.ToString() ? */
         int nbErreurs = 0;//Pareil que pour essais restants non ? 
-        string[] strArr = { "bateau", "chaise", "framboise", "catapulte", "montagne", "stylo", "porte-clef" };
+       
 
         #region Singleton
         private static Jeu singleJeu = null;
@@ -64,7 +65,8 @@ namespace Quinto
         private void btnStart_Click(object sender, EventArgs e)
         {
             //GestionContextes(Contextes.DebutDeManche); //Gère tout ce qui est en dessous
-            essaisRestants = 3/*= Niveau.NbEssais*/;
+            pnlClavier.Enabled = true;
+            essaisRestants = 7/*= Niveau.NbEssais*/;
             lblEssais.Text = essaisRestants.ToString();//A supprimmer
             nbErreurs = 0;//A supprimmer
             lblNbErreurs.Text = nbErreurs.ToString();//A supprimer
@@ -124,11 +126,14 @@ namespace Quinto
             }
         }
 
-        public void GenererMotCache(/*IEnumerable<string> listeDeMots, string motATrouver, string motCache*/)
+        public void GenererMotCache()
         {
+            motsrandom = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
             Random rand = new Random();
-            MotATrouver = strArr[rand.Next(strArr.Length)]; 
-            //MotATrouver = listeDeMots[rand.Next(listeDeMots.Lenght)] ; 
+            
+
+            int nb = rand.Next(0, motsrandom.Count);
+            MotATrouver = motsrandom.ElementAt(nb).Texte ; 
             foreach (char c in MotATrouver)
                 if (c == '-')
                 {

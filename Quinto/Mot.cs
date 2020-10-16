@@ -29,10 +29,11 @@ namespace Quinto
         }
         public static bool IsMotOk(string value)
         {
+            
             if (value == null || value.Length < 5 || value.Length > 25) return false;
             for (int i = 0; i < value.Length; i++)
             {
-                if (!char.IsLetter(value[i])) return false;
+                if (!char.IsLetter(value[i]) && value[i] != '-') return false;
             }
             return true;
         }

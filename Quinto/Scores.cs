@@ -33,8 +33,12 @@ namespace Quinto
         {
             singleScores = null;
         }
+
         #endregion
 
-    
+       private void Scores_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

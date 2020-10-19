@@ -33,7 +33,7 @@ namespace Quinto
         {
             if (rdb1.Checked)
             {
-                    return new Niveau(3, "courts", 10);
+                    return new Niveau(1, "courts", 10);
             }
             if (rdb2.Checked)
             {

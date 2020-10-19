@@ -18,6 +18,7 @@ namespace Quinto
         int nbManches = SelectionNiveau.niveauSelectionne.NbManches;
         string longueurDesMots = SelectionNiveau.niveauSelectionne.LongueurDesMots;
         int nbEssais = SelectionNiveau.niveauSelectionne.NbErreurs;
+        int nbErreursTotales = 0; 
         Mots motsrandom = new Mots();
         private Jeu()
         {
@@ -102,6 +103,7 @@ namespace Quinto
             {
                 lblNbErreurs.Text = (int.Parse(lblNbErreurs.Text) + 1).ToString();
                 lblEssais.Text = (int.Parse(lblEssais.Text)-1).ToString();
+                nbErreursTotales++;
             }
         }
 
@@ -165,8 +167,14 @@ namespace Quinto
 
         public string CalculerScore()
         {
-            int score = int.Parse(lblPoints.Text) + int.Parse(lblTimer.Text) + int.Parse(lblNbErreurs.Text);
+            int score = int.Parse(lblTimer.Text) + nbErreursTotales;
             return score.ToString(); 
+        }
+
+        public string CalculerScoreGlobal()
+        {
+            int scoreGlobal = (int.Parse(lblTimer.Text) / nbManches) + nbErreursTotales;
+            return scoreGlobal.ToString(); 
         }
 
         public enum Contextes
@@ -195,6 +203,7 @@ namespace Quinto
                     lblPoints.Text = 0.ToString();
                     txtMotATrouver.Clear();
                     lstLettres.Items.Clear();
+                    nbErreursTotales = 0; 
                     break;
 
                 case Contextes.DebutDeManche: //btnStart

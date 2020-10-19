@@ -23,14 +23,7 @@ namespace Quinto
             Points = points;
         }
 
-        static int count;
-        public static void SaveScore()
-        {
-            while (count != 10)
-            {
-                
-            }
-        }
+
         
         
         

@@ -30,21 +30,23 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPseudo = new System.Windows.Forms.TextBox();
+            this.pnlSave = new System.Windows.Forms.Panel();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.lblPseudo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblScoreGlobal = new System.Windows.Forms.Label();
+            this.pnlSave.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Script", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 9);
+            this.label1.Location = new System.Drawing.Point(271, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(297, 80);
             this.label1.TabIndex = 0;
@@ -63,24 +65,24 @@
     "nregistrer, renseignez votre pseudo ci-dessous.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // txtPseudo
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtPseudo.Location = new System.Drawing.Point(92, 185);
+            this.txtPseudo.Name = "txtPseudo";
+            this.txtPseudo.Size = new System.Drawing.Size(156, 20);
+            this.txtPseudo.TabIndex = 2;
             // 
-            // panel1
+            // pnlSave
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnEnregistrer);
-            this.panel1.Controls.Add(this.lblPseudo);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(156, 125);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 230);
-            this.panel1.TabIndex = 3;
-            this.panel1.Visible = false;
+            this.pnlSave.Controls.Add(this.label2);
+            this.pnlSave.Controls.Add(this.btnEnregistrer);
+            this.pnlSave.Controls.Add(this.lblPseudo);
+            this.pnlSave.Controls.Add(this.txtPseudo);
+            this.pnlSave.Location = new System.Drawing.Point(156, 125);
+            this.pnlSave.Name = "pnlSave";
+            this.pnlSave.Size = new System.Drawing.Size(512, 230);
+            this.pnlSave.TabIndex = 3;
+            this.pnlSave.Visible = false;
             // 
             // btnEnregistrer
             // 
@@ -90,6 +92,7 @@
             this.btnEnregistrer.TabIndex = 4;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // lblPseudo
             // 
@@ -113,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(357, 89);
+            this.label3.Location = new System.Drawing.Point(157, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 33);
             this.label3.TabIndex = 5;
@@ -123,26 +126,49 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(445, 89);
+            this.lblScore.Location = new System.Drawing.Point(245, 89);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(30, 33);
             this.lblScore.TabIndex = 6;
             this.lblScore.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(292, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(325, 33);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Score au classement global :";
+            // 
+            // lblScoreGlobal
+            // 
+            this.lblScoreGlobal.AutoSize = true;
+            this.lblScoreGlobal.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScoreGlobal.Location = new System.Drawing.Point(611, 89);
+            this.lblScoreGlobal.Name = "lblScoreGlobal";
+            this.lblScoreGlobal.Size = new System.Drawing.Size(30, 33);
+            this.lblScoreGlobal.TabIndex = 8;
+            this.lblScoreGlobal.Text = "0";
             // 
             // Victoire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblScoreGlobal);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSave);
             this.Controls.Add(this.label1);
             this.Name = "Victoire";
             this.Text = "Victoire";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Victoire_Load);
+            this.pnlSave.ResumeLayout(false);
+            this.pnlSave.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,12 +178,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtPseudo;
+        private System.Windows.Forms.Panel pnlSave;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Label lblPseudo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblScoreGlobal;
     }
 }

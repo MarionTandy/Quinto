@@ -15,7 +15,7 @@ namespace Quinto
             HashSet<Mot> motsFaciles = new HashSet<Mot> ();
             foreach (Mot mot in motsATrier)
             {
-                if ((Mot.Count(mot) >= 5) && (Mot.Count(mot) <= 8))
+                if ((Mot.Count(mot) >= 5) && (Mot.Count(mot) < 8))
                 {
                     motsFaciles.Add(mot);
                 }

@@ -27,20 +27,7 @@ namespace Quinto
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*public static void SaveScore( ScoreJoueur score,Niveau niveauselectionne,List<ScoreJoueur> scorefacile, List<ScoreJoueur> scoredifficile, List<ScoreJoueur> scoreexpert)
+        public static void SaveScore( ScoreJoueur score,Niveau niveauselectionne,List<ScoreJoueur> scorefacile, List<ScoreJoueur> scoredifficile, List<ScoreJoueur> scoreexpert)
         {
 
             switch ( niveauselectionne.Difficulte )
@@ -65,7 +52,7 @@ namespace Quinto
         }
         public static void VerifScore()
         {
-            if()
-        }*/
+            
+        }
     }
 }

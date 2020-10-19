@@ -36,8 +36,12 @@ namespace Quinto
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+           
+
+
             if (Mot.IsMotOk(txtMotAAjouter.Text))
             {
+                
                 Mot mot = new Mot();
                 mot.Texte = txtMotAAjouter.Text;
                 if (!lstLexique.Items.Contains(mot.Texte)){
@@ -76,6 +80,8 @@ namespace Quinto
         {
             singleLexique = null;
         }
+
+       
         #endregion
     }
 }

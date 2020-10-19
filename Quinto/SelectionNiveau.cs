@@ -12,6 +12,7 @@ namespace Quinto
 {
     public partial class SelectionNiveau : Form
     {
+        public static Niveau niveauSelectionne;
         private SelectionNiveau()
         {
             InitializeComponent();
@@ -36,8 +37,18 @@ namespace Quinto
         #region
         private void btnJouer_Click(object sender, EventArgs e)
         {
-            Jeu.Instance().Show();
-            Jeu.Instance().Activate();
+            try
+            {
+                niveauSelectionne = Niveau.SelectionnerNiveau(rdbFacile, rdbDifficile, rdbExpert);
+                Jeu.Instance().Show();
+                Jeu.Instance().Activate();
+
+            }
+            catch (ApplicationException apEx)
+            {
+                MessageBox.Show(apEx.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         #endregion
 

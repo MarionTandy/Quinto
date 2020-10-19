@@ -38,6 +38,17 @@ namespace Quinto
             return true;
         }
 
+        public static int Count(Mot mot)
+        {
+            int count = 0; 
+            foreach (char c in mot.Texte)
+            {
+                count ++; 
+            }
+
+            return count; 
+        }
+
     }
 
 }

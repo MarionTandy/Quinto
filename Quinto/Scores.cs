@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text; 
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -38,9 +39,6 @@ namespace Quinto
 
         #endregion
 
-       private void Scores_Load(object sender, EventArgs e)
-        {
-           
-        }
+     
     }
 }

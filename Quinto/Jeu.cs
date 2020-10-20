@@ -48,6 +48,7 @@ namespace Quinto
 
         private void Jeu_Load(object sender, EventArgs e)
         {
+           
             GestionContextes(Contextes.Initial);
         }
 

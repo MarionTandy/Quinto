@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Quinto
 
         private void Victoire_Load(object sender, EventArgs e)
         {
+          
             ListeScores = (List<ScoreJoueur>)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(List<ScoreJoueur>));
            
             if (ListeScores.Count < 10)

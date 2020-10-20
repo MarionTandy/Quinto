@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jeu));
             this.lstLettres = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNbMancheJouees = new System.Windows.Forms.Label();
@@ -86,7 +87,7 @@
             this.lstLettres.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstLettres.FormattingEnabled = true;
             this.lstLettres.ItemHeight = 27;
-            this.lstLettres.Location = new System.Drawing.Point(24, 17);
+            this.lstLettres.Location = new System.Drawing.Point(215, 131);
             this.lstLettres.Name = "lstLettres";
             this.lstLettres.Size = new System.Drawing.Size(56, 355);
             this.lstLettres.TabIndex = 1;
@@ -94,8 +95,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(557, 20);
+            this.label1.Location = new System.Drawing.Point(748, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 27);
             this.label1.TabIndex = 2;
@@ -104,8 +106,9 @@
             // lblNbMancheJouees
             // 
             this.lblNbMancheJouees.AutoSize = true;
+            this.lblNbMancheJouees.BackColor = System.Drawing.Color.Transparent;
             this.lblNbMancheJouees.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbMancheJouees.Location = new System.Drawing.Point(634, 20);
+            this.lblNbMancheJouees.Location = new System.Drawing.Point(825, 134);
             this.lblNbMancheJouees.Name = "lblNbMancheJouees";
             this.lblNbMancheJouees.Size = new System.Drawing.Size(24, 27);
             this.lblNbMancheJouees.TabIndex = 3;
@@ -114,8 +117,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(658, 20);
+            this.label3.Location = new System.Drawing.Point(849, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 27);
             this.label3.TabIndex = 4;
@@ -124,8 +128,9 @@
             // lblNbManchesTotal
             // 
             this.lblNbManchesTotal.AutoSize = true;
+            this.lblNbManchesTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblNbManchesTotal.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbManchesTotal.Location = new System.Drawing.Point(698, 20);
+            this.lblNbManchesTotal.Location = new System.Drawing.Point(889, 134);
             this.lblNbManchesTotal.Name = "lblNbManchesTotal";
             this.lblNbManchesTotal.Size = new System.Drawing.Size(24, 27);
             this.lblNbManchesTotal.TabIndex = 5;
@@ -134,8 +139,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(554, 49);
+            this.label5.Location = new System.Drawing.Point(745, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 27);
             this.label5.TabIndex = 6;
@@ -144,8 +150,9 @@
             // lblEssais
             // 
             this.lblEssais.AutoSize = true;
+            this.lblEssais.BackColor = System.Drawing.Color.Transparent;
             this.lblEssais.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEssais.Location = new System.Drawing.Point(696, 49);
+            this.lblEssais.Location = new System.Drawing.Point(887, 163);
             this.lblEssais.Name = "lblEssais";
             this.lblEssais.Size = new System.Drawing.Size(24, 27);
             this.lblEssais.TabIndex = 7;
@@ -154,8 +161,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(729, 49);
+            this.label7.Location = new System.Drawing.Point(920, 163);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 27);
             this.label7.TabIndex = 8;
@@ -164,8 +172,9 @@
             // lblEssaisTotaux
             // 
             this.lblEssaisTotaux.AutoSize = true;
+            this.lblEssaisTotaux.BackColor = System.Drawing.Color.Transparent;
             this.lblEssaisTotaux.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEssaisTotaux.Location = new System.Drawing.Point(769, 49);
+            this.lblEssaisTotaux.Location = new System.Drawing.Point(960, 163);
             this.lblEssaisTotaux.Name = "lblEssaisTotaux";
             this.lblEssaisTotaux.Size = new System.Drawing.Size(24, 27);
             this.lblEssaisTotaux.TabIndex = 9;
@@ -173,6 +182,7 @@
             // 
             // pnlClavier
             // 
+            this.pnlClavier.BackColor = System.Drawing.Color.Transparent;
             this.pnlClavier.Controls.Add(this.bu);
             this.pnlClavier.Controls.Add(this.button27);
             this.pnlClavier.Controls.Add(this.button18);
@@ -203,7 +213,7 @@
             this.pnlClavier.Controls.Add(this.button1);
             this.pnlClavier.Enabled = false;
             this.pnlClavier.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlClavier.Location = new System.Drawing.Point(86, 17);
+            this.pnlClavier.Location = new System.Drawing.Point(277, 131);
             this.pnlClavier.Name = "pnlClavier";
             this.pnlClavier.Size = new System.Drawing.Size(444, 166);
             this.pnlClavier.TabIndex = 65;
@@ -497,21 +507,23 @@
             // 
             // btnManche
             // 
+            this.btnManche.BackColor = System.Drawing.Color.Transparent;
             this.btnManche.Enabled = false;
             this.btnManche.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManche.Location = new System.Drawing.Point(602, 332);
+            this.btnManche.Location = new System.Drawing.Point(793, 439);
             this.btnManche.Name = "btnManche";
             this.btnManche.Size = new System.Drawing.Size(167, 40);
             this.btnManche.TabIndex = 118;
             this.btnManche.Text = "Manche suivante";
-            this.btnManche.UseVisualStyleBackColor = true;
+            this.btnManche.UseVisualStyleBackColor = false;
             this.btnManche.Click += new System.EventHandler(this.btnManche_Click);
             // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
+            this.lblTimer.BackColor = System.Drawing.Color.Transparent;
             this.lblTimer.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(634, 117);
+            this.lblTimer.Location = new System.Drawing.Point(825, 231);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(24, 27);
             this.lblTimer.TabIndex = 124;
@@ -520,8 +532,9 @@
             // lblNbErreurs
             // 
             this.lblNbErreurs.AutoSize = true;
+            this.lblNbErreurs.BackColor = System.Drawing.Color.Transparent;
             this.lblNbErreurs.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbErreurs.Location = new System.Drawing.Point(645, 83);
+            this.lblNbErreurs.Location = new System.Drawing.Point(836, 197);
             this.lblNbErreurs.Name = "lblNbErreurs";
             this.lblNbErreurs.Size = new System.Drawing.Size(101, 27);
             this.lblNbErreurs.TabIndex = 123;
@@ -530,8 +543,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(606, 153);
+            this.label2.Location = new System.Drawing.Point(797, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 27);
             this.label2.TabIndex = 122;
@@ -540,7 +554,7 @@
             // txtMotATrouver
             // 
             this.txtMotATrouver.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotATrouver.Location = new System.Drawing.Point(113, 337);
+            this.txtMotATrouver.Location = new System.Drawing.Point(304, 445);
             this.txtMotATrouver.Name = "txtMotATrouver";
             this.txtMotATrouver.Size = new System.Drawing.Size(295, 33);
             this.txtMotATrouver.TabIndex = 126;
@@ -548,13 +562,14 @@
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.Transparent;
             this.btnStart.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(433, 333);
+            this.btnStart.Location = new System.Drawing.Point(624, 439);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(149, 40);
             this.btnStart.TabIndex = 127;
             this.btnStart.Text = "C\'est parti !";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // timer
@@ -565,8 +580,9 @@
             // lblBravo
             // 
             this.lblBravo.AutoSize = true;
+            this.lblBravo.BackColor = System.Drawing.Color.Transparent;
             this.lblBravo.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBravo.Location = new System.Drawing.Point(632, 282);
+            this.lblBravo.Location = new System.Drawing.Point(823, 387);
             this.lblBravo.Name = "lblBravo";
             this.lblBravo.Size = new System.Drawing.Size(123, 40);
             this.lblBravo.TabIndex = 128;
@@ -576,8 +592,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(554, 117);
+            this.label4.Location = new System.Drawing.Point(745, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 27);
             this.label4.TabIndex = 129;
@@ -586,8 +603,9 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
+            this.lblPoints.BackColor = System.Drawing.Color.Transparent;
             this.lblPoints.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(554, 153);
+            this.lblPoints.Location = new System.Drawing.Point(745, 267);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(24, 27);
             this.lblPoints.TabIndex = 130;
@@ -596,8 +614,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(554, 83);
+            this.label6.Location = new System.Drawing.Point(745, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 27);
             this.label6.TabIndex = 131;
@@ -607,7 +626,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1151, 611);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.label4);

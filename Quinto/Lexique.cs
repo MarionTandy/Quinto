@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -67,6 +68,8 @@ namespace Quinto
         }
         private void Lexique_Load(object sender, EventArgs e)
         {
+          
+
             mots = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
             foreach (var item in mots)
             {

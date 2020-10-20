@@ -91,6 +91,7 @@
             // 
             // jouerToolStripMenuItem
             // 
+            this.jouerToolStripMenuItem.BackgroundImage = global::Quinto.Properties.Resources.accueil_quinto;
             this.jouerToolStripMenuItem.Name = "jouerToolStripMenuItem";
             this.jouerToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.jouerToolStripMenuItem.Text = "Jouer";

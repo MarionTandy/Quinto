@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scores));
             this.lblScoreDifficile = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -54,13 +53,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Quinto.Properties.Resources.frm_background;
             this.ClientSize = new System.Drawing.Size(748, 450);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.lblScoreDifficile);
             this.Name = "Scores";
             this.Text = "Scores";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Scores_FormClosed);
+            this.Load += new System.EventHandler(this.Scores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

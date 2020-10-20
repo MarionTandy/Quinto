@@ -118,6 +118,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Retour au menu principal";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -167,6 +168,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.ErrorImage = global::Quinto.Properties.Resources.victoire_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(275, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 293);
@@ -179,7 +181,7 @@
             this.label5.Location = new System.Drawing.Point(262, 293);
             this.label5.MaximumSize = new System.Drawing.Size(200, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 26);
+            this.label5.Size = new System.Drawing.Size(186, 26);
             this.label5.TabIndex = 10;
             this.label5.Text = "Waouh, tes biscotos ont poussés ! Tu peux retourner te la péter tranquille.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;

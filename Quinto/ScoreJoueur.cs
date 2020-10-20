@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,39 @@ namespace Quinto
             Points = points;
         }
 
+        public class TriAscendantHelper : IComparer
+        {
+            int IComparer.Compare(object a, object b)
+            {
+                ScoreJoueur score1 = (ScoreJoueur)a;
+                ScoreJoueur score2 = (ScoreJoueur)b;
 
-        
-        
-        
-        public static void SaveScore( ScoreJoueur score,Niveau niveauselectionne,List<ScoreJoueur> scorefacile, List<ScoreJoueur> scoredifficile, List<ScoreJoueur> scoreexpert)
+                if (score1.Points > score2.Points)
+                    return 1;
+
+                if (score1.Points < score2.Points)
+                    return -1;
+
+                else
+                    return 0;
+            }
+        }
+
+        public static IComparer TriAscendant()
+        {
+            return (IComparer)new TriAscendantHelper();
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} : {1}", Pseudo, Points); 
+        }
+
+
+
+
+
+        /*public static void SaveScore( ScoreJoueur score,Niveau niveauselectionne,List<ScoreJoueur> scorefacile, List<ScoreJoueur> scoredifficile, List<ScoreJoueur> scoreexpert)
         {
 
             switch ( niveauselectionne.Difficulte )
@@ -49,7 +78,7 @@ namespace Quinto
                     Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Scoreexpert.json", scoreexpert);
                     break;
             }
-        }
+        }*/
         public static void VerifScore()
         {
             

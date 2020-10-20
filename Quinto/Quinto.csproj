@@ -88,6 +88,7 @@
       <DependentUpon>SelectionNiveau.cs</DependentUpon>
     </Compile>
     <Compile Include="Serialisation.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Victoire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Scores.resx">
       <DependentUpon>Scores.cs</DependentUpon>
@@ -131,9 +133,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Lexique.json" />
+    <None Include="Resources\Top10Scores.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frm_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accueil_quinto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facile-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\difficile-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expert-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\victoire-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

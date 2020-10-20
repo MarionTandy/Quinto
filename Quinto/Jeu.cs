@@ -151,10 +151,13 @@ namespace Quinto
 
         public void VerifierVictoire(string manchesJouees, string manchesTotales, string motATrouver, string motCache)
         {
+            
             if ((int.Parse(manchesJouees) == int.Parse(manchesTotales)) && MotComplet(motATrouver, motCache))
             {
                 Victoire victoire = new Victoire();
-                victoire.Show(); 
+                victoire.Show();
+                
+                singleJeu.Enabled = false;
             }
         }
         public void VerifierDefaite(string essaisRestant)

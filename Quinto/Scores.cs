@@ -14,7 +14,7 @@ namespace Quinto
 {
     public partial class Scores : Form
     {
-       
+        ScoreJoueur[] ListeScores = new ScoreJoueur[] { };
         private Scores()
         {
             InitializeComponent();
@@ -37,8 +37,17 @@ namespace Quinto
             singleScores = null;
         }
 
+
         #endregion
 
-     
+        private void Scores_Load(object sender, EventArgs e)
+        {
+            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(ScoreJoueur[]));
+            Array.Sort(ListeScores, ScoreJoueur.TriAscendant());
+            foreach (ScoreJoueur item in ListeScores)
+            {
+                listBox2.Items.Add(item.ToString()); 
+            }
+        }
     }
 }

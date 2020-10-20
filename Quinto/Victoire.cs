@@ -15,8 +15,8 @@ namespace Quinto
     public partial class Victoire : Form
     {
         static int count = 0;
-        
-        List<ScoreJoueur> ListeScores =  new List<ScoreJoueur>() ; 
+
+        ScoreJoueur[] ListeScores = new ScoreJoueur[] { }; 
         public Victoire()
         {
             InitializeComponent();
@@ -30,9 +30,9 @@ namespace Quinto
         private void Victoire_Load(object sender, EventArgs e)
         {
           
-            ListeScores = (List<ScoreJoueur>)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(List<ScoreJoueur>));
-           
-            if (ListeScores.Count < 10)
+            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(ScoreJoueur[]));
+            Array.Sort(ListeScores, ScoreJoueur.TriAscendant());
+            if (int.Parse(lblScoreGlobal.Text)<(ListeScores[9].Points))
             {
                 pnlSave.Visible = true; 
             }
@@ -40,26 +40,20 @@ namespace Quinto
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
-            if (ListeScores.Count < 10)
-            {
-                ScoreJoueur scoreASauv = new ScoreJoueur(txtPseudo.Text, int.Parse(lblScore.Text));
-                ListeScores.Add(scoreASauv); 
-                Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Top10Scores.json", ListeScores);
-                count++; //verifier que le count augmente bien.
-            }
-            else
-            {
-                int scoreLePLusBas = ListeScores.Min(score => score.Points);
+ 
+            ScoreJoueur scoreASauv = new ScoreJoueur(txtPseudo.Text, int.Parse(lblScore.Text));
+            ListeScores[9]=scoreASauv; 
+            Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Top10Scores.json", ListeScores);
+            MessageBox.Show("Ton score a bien été enregistré dans le top 10 !", "Enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtPseudo.Clear();
+            btnEnregistrer.Enabled = false;
 
-                    if (int.Parse(lblScoreGlobal.Text) > scoreLePLusBas)
-                    {
-                         
-                        
-                        ScoreJoueur scoreASauv = new ScoreJoueur(txtPseudo.Text, int.Parse(lblScore.Text));
-                        ListeScores.Add(scoreASauv); 
-                    }
-                
-            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Jeu.Instance().Close();
         }
     }
 }

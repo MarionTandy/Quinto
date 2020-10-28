@@ -49,7 +49,11 @@ namespace Quinto
                     lstLexique.Items.Add(mot.Texte); }
                 mots.Add(mot);
                 txtMotAAjouter.Clear();
-                Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Lexique.json", mots);
+
+                String directory = Directory.GetCurrentDirectory();
+                DirectoryInfo direc = new DirectoryInfo(directory);
+                direc = direc.Parent.Parent.Parent;
+                Serialisation.SaveJson(direc.FullName + "\\Lexique.json", mots);
             }
             else
             {
@@ -68,9 +72,11 @@ namespace Quinto
         }
         private void Lexique_Load(object sender, EventArgs e)
         {
-          
 
-            mots = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
+            String directory = Directory.GetCurrentDirectory();
+            DirectoryInfo direc = new DirectoryInfo(directory);
+            direc = direc.Parent.Parent.Parent;
+            mots = (Mots)Serialisation.LoadJson(direc.FullName + "\\Lexique.json", typeof(Mots));
             foreach (var item in mots)
             {
                 lstLexique.Items.Add(item.Texte);

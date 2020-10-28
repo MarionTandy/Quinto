@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Quinto
 {
@@ -42,7 +43,10 @@ namespace Quinto
 
         private void Scores_Load(object sender, EventArgs e)
         {
-            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(ScoreJoueur[]));
+            String directory = Directory.GetCurrentDirectory();
+            DirectoryInfo direc = new DirectoryInfo(directory);
+            direc = direc.Parent.Parent.Parent;
+            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(direc.FullName + "\\Top10Scores.json", typeof(ScoreJoueur[]));
             Array.Sort(ListeScores, ScoreJoueur.TriAscendant());
             foreach (ScoreJoueur item in ListeScores)
             {

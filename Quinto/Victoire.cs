@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Quinto
 {
@@ -29,8 +30,10 @@ namespace Quinto
 
         private void Victoire_Load(object sender, EventArgs e)
         {
-          
-            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Top10Scores.json", typeof(ScoreJoueur[]));
+            String directory = Directory.GetCurrentDirectory();
+            DirectoryInfo direc = new DirectoryInfo(directory);
+            direc = direc.Parent.Parent.Parent;
+            ListeScores = (ScoreJoueur[])Serialisation.LoadJson(direc + "\\Top10Scores.json", typeof(ScoreJoueur[]));
             Array.Sort(ListeScores, ScoreJoueur.TriAscendant());
             if (int.Parse(lblScoreGlobal.Text)<(ListeScores[9].Points))
             {
@@ -42,8 +45,11 @@ namespace Quinto
         {
  
             ScoreJoueur scoreASauv = new ScoreJoueur(txtPseudo.Text, int.Parse(lblScore.Text));
-            ListeScores[9]=scoreASauv; 
-            Serialisation.SaveJson(@"C:\Users\CDA\source\repos\Top10Scores.json", ListeScores);
+            ListeScores[9]=scoreASauv;
+            String directory = Directory.GetCurrentDirectory();
+            DirectoryInfo direc = new DirectoryInfo(directory);
+            direc = direc.Parent.Parent.Parent;
+            Serialisation.SaveJson(direc + "\\Top10Scores.json", ListeScores);
             MessageBox.Show("Ton score a bien été enregistré dans le top 10 !", "Enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtPseudo.Clear();
             btnEnregistrer.Enabled = false;

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -110,7 +111,11 @@ namespace Quinto
 
         public void GenererMotCache()
         {
-            motsrandom = (Mots)Serialisation.LoadJson(@"C:\Users\CDA\source\repos\Lexique.json", typeof(Mots));
+            String directory = Directory.GetCurrentDirectory();
+            DirectoryInfo direc = new DirectoryInfo(directory);
+            direc = direc.Parent.Parent.Parent;
+            motsrandom = (Mots)Serialisation.LoadJson(direc + "\\Lexique.json", typeof(Mots));
+            //motsrandom = (Mots)Serialisation.LoadJson(StreamReader.UTF8.GetString(Properties.Resources.Lexique), typeof(Mots));
             Random rand = new Random();
             HashSet<Mot> motsParNiveau = new HashSet<Mot>();
             switch (longueurDesMots)
